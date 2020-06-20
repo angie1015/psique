@@ -9,12 +9,19 @@ const img = 'assets/images/';
 const title = TextStyle(color: Colors.white, fontSize: 36, letterSpacing: 13.0, fontWeight: FontWeight.w600);
 
 void main() {
-  runApp(MaterialApp(
-    theme: ThemeData(fontFamily: 'Nunito'),
-    title: 'Psique',
-    debugShowCheckedModeBanner: false,
-    home: HomeRoute(),
-  ));
+  runApp(new MyApp());
+}
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      theme: ThemeData(fontFamily: 'Nunito'),
+      title: 'Psique',
+      debugShowCheckedModeBanner: false,
+      home: HomeRoute(),
+    )
+  }
 }
 
 class HomeRoute extends StatefulWidget {
