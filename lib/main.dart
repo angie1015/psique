@@ -11,6 +11,7 @@ const title = TextStyle(color: Colors.white, fontSize: 36, letterSpacing: 13.0, 
 void main() {
   runApp(MaterialApp(
     theme: ThemeData(fontFamily: 'Nunito'),
+    title: 'Psique',
     debugShowCheckedModeBanner: false,
     home: HomeRoute(),
   ));
@@ -132,11 +133,10 @@ class _HomeRouteState extends State<HomeRoute> {
 
   @override
   build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Container(
           height: MediaQuery.of(context).size.height,
-          width: width,
+          width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage('assets/images/$bg.jpg'), fit: BoxFit.cover)),
