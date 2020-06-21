@@ -87,7 +87,7 @@ class _StandardPageState extends State<StandardPage> {
                       fillColor: Colors.white,
                       hintText: 'Email/Username',
                       hintStyle: TextStyle(color: Colors.white),
-                        labelStyle: TextStyle(color: Colors.white,fontSize: 24.0),
+                        labelStyle: TextStyle(color: Colors.white),
                     ),
                     onChanged: (e) {
                       setState(() {});
@@ -102,7 +102,7 @@ class _StandardPageState extends State<StandardPage> {
                         fillColor: Colors.white,
                       hintText: 'alphabets and numbers',
                       labelText: 'Password',
-                        labelStyle: TextStyle(color: Colors.white,fontSize: 24.0),
+                        labelStyle: TextStyle(color: Colors.white),
                         hintStyle: TextStyle(color: Colors.white),
                     ),
                     onChanged: (e) {
