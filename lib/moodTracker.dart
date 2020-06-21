@@ -44,7 +44,7 @@ class _Mood extends State<Mood> {
               child: Text(
                 'Let us know how you are today...',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.dancingScript(fontSize: 40, color: Colors.white),
+                style: GoogleFonts.dancingScript(fontSize: 40, color: Colors.pink[900], decorationColor: Colors.white),
               ),
             ),
             SizedBox(
@@ -61,9 +61,9 @@ class _Mood extends State<Mood> {
                   Expanded(
                     child: FlatButton(
                       shape: CircleBorder(),
-                      padding: EdgeInsets.all(16),
+                      padding: EdgeInsets.all(6),
                       child: Image.asset('assets/images/1.png'),
-                      color: isSelected[0] ? Colors.grey : Colors.transparent,
+                      color: isSelected[0] ? Colors.blueGrey: Colors.transparent,
                       onPressed: () {
                         setState(() => toggle(0));
                       },
@@ -72,9 +72,9 @@ class _Mood extends State<Mood> {
                   Expanded(
                     child: FlatButton(
                       shape: CircleBorder(),
-                      padding: EdgeInsets.all(16),
+                      padding: EdgeInsets.all(6),
                       child: Image.asset('assets/images/2.png'),
-                      color: isSelected[1] ? Colors.grey : Colors.transparent,
+                      color: isSelected[1] ? Colors.blueGrey : Colors.transparent,
                       onPressed: () {
                         setState(() => toggle(1));
                       },
@@ -83,9 +83,9 @@ class _Mood extends State<Mood> {
                   Expanded(
                     child: FlatButton(
                       shape: CircleBorder(),
-                      padding: EdgeInsets.all(16),
+                      padding: EdgeInsets.all(6),
                       child: Image.asset('assets/images/3.png'),
-                      color: isSelected[2] ? Colors.grey : Colors.transparent,
+                      color: isSelected[2] ? Colors.blueGrey: Colors.transparent,
                       onPressed: () {
                         setState(() => toggle(2));
                       },
@@ -94,9 +94,9 @@ class _Mood extends State<Mood> {
                   Expanded(
                     child: FlatButton(
                       shape: CircleBorder(),
-                      padding: EdgeInsets.all(16),
+                      padding: EdgeInsets.all(6),
                       child: Image.asset('assets/images/4.png'),
-                      color: isSelected[3] ? Colors.grey : Colors.transparent,
+                      color: isSelected[3] ? Colors.blueGrey : Colors.transparent,
                       onPressed: () {
                         setState(() => toggle(3));
                       },
@@ -111,28 +111,31 @@ class _Mood extends State<Mood> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.0),
               child: Center(
-                child: TextField(
-                  minLines: 5,
-                  maxLines: 10,
-                  autocorrect: false,
-                  decoration: InputDecoration(
-                    hintText: 'Write it down here',
-                    hintStyle: TextStyle(
-                      color: Colors.black,
-                      fontStyle: FontStyle.italic,
+                child: Opacity(
+                  opacity: .5,
+                  child: TextField(
+                    minLines: 5,
+                    maxLines: 10,
+                    autocorrect: false,
+                    decoration: InputDecoration(
+                      hintText: 'Write it down here',
+                      hintStyle: TextStyle(
+                        color: Colors.black,
+                        fontStyle: FontStyle.italic,
+                      ),
+                      filled: true,
+                      fillColor: Color(0xFFDBEDFF),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        borderSide: BorderSide(color: Colors.grey),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        borderSide: BorderSide(color: Colors.grey),
+                      ),
                     ),
-                    filled: true,
-                    fillColor: Color(0xFFDBEDFF),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      borderSide: BorderSide(color: Colors.grey),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      borderSide: BorderSide(color: Colors.grey),
-                    ),
+                    controller: controller,
                   ),
-                  controller: controller,
                 ),
               ),
             ),
