@@ -9,16 +9,4 @@ A recent estimate by the World Health Organization (WHO), suggests that India ha
  
  The solution we present is Psique - an app that ensures the mental well-being of users by keeping them calm, positive and stress-free using soothing music, meditative podcasts, and audiobooks all with the feel of mother Nature’s healing touch in forests, oceans and much more. We have implemented a daily journal for users to share their thoughts and feelings on a day to day basis. Users also get to interact with a chatbot friend, whom they can reach out to at times of need when they are feeling low. With the help of the data entered in journal and chats, we track users’ mood and behavior changes by applying sentiment analysis through Natural Language Processing to assess their mental health and set appointments with doctors according to severity. Thus our app solves this problem by facilitating the timely detection of mental health issues and providing a platform for patients to consult doctors without the social stigma attached.
 
-# Technologies used
-Flutter
-Dart
-Firebase
-Flask
-Heroku
-NLP
-NLTK
-Agora API
-Github DevOps
-Dailogflow
-Auth0
 
