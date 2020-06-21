@@ -8,6 +8,7 @@ import 'package:psique/main.dart';
 
 class Mood extends StatefulWidget {
   @override
+
   _Mood createState() => _Mood();
 }
 
@@ -29,6 +30,7 @@ class _Mood extends State<Mood> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.black26,
         body: Container(
