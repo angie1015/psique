@@ -5,6 +5,7 @@ import 'package:flutter_auth0/flutter_auth0.dart';
 import 'dart:async';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:psique/standard.dart';
+import 'moodTracker.dart';
 
 
 const img = 'assets/images/';
@@ -39,7 +40,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(fontFamily: 'Nunito'),
       title: 'Psique',
       debugShowCheckedModeBanner: false,
-      home: StandardPage(auth), //HomeRoute(), // use this line fo view the sign in page: StandardPage(auth),
+      home: Mood(), //HomeRoute(), // use this line fo view the sign in page: StandardPage(auth),
     );
   }
 }

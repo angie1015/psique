@@ -1,6 +1,9 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:psique/main.dart';
+
 
 
 class Mood extends StatefulWidget {
@@ -32,8 +35,8 @@ class _Mood extends State<Mood> {
         height: MediaQuery.of(context).size.height,
     width: MediaQuery.of(context).size.width,
     decoration: BoxDecoration(
-        image: DecorationImage(
-         image: AssetImage('assets/images/bkgnd_1.jpg'), fit: BoxFit.cover)),
+    image: DecorationImage(
+    image: AssetImage('assets/images/bkgnd_1.jpg'), fit: BoxFit.cover)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -41,11 +44,7 @@ class _Mood extends State<Mood> {
               child: Text(
                 'Let us know how you are today...',
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Dancing Script',
-                  fontSize: 40.0,
-                  color: Colors.white70,
-                ),
+                style: GoogleFonts.dancingScript(fontSize: 40, color: Colors.white),
               ),
             ),
             SizedBox(
@@ -63,7 +62,7 @@ class _Mood extends State<Mood> {
                     child: FlatButton(
                       shape: CircleBorder(),
                       padding: EdgeInsets.all(16),
-                      child: Image.asset('images/1.png'),
+                      child: Image.asset('assets/images/1.png'),
                       color: isSelected[0] ? Colors.grey : Colors.transparent,
                       onPressed: () {
                         setState(() => toggle(0));
@@ -74,7 +73,7 @@ class _Mood extends State<Mood> {
                     child: FlatButton(
                       shape: CircleBorder(),
                       padding: EdgeInsets.all(16),
-                      child: Image.asset('images/2.png'),
+                      child: Image.asset('assets/images/2.png'),
                       color: isSelected[1] ? Colors.grey : Colors.transparent,
                       onPressed: () {
                         setState(() => toggle(1));
@@ -85,7 +84,7 @@ class _Mood extends State<Mood> {
                     child: FlatButton(
                       shape: CircleBorder(),
                       padding: EdgeInsets.all(16),
-                      child: Image.asset('images/3.png'),
+                      child: Image.asset('assets/images/3.png'),
                       color: isSelected[2] ? Colors.grey : Colors.transparent,
                       onPressed: () {
                         setState(() => toggle(2));
@@ -96,7 +95,7 @@ class _Mood extends State<Mood> {
                     child: FlatButton(
                       shape: CircleBorder(),
                       padding: EdgeInsets.all(16),
-                      child: Image.asset('images/4.png'),
+                      child: Image.asset('assets/images/4.png'),
                       color: isSelected[3] ? Colors.grey : Colors.transparent,
                       onPressed: () {
                         setState(() => toggle(3));
@@ -137,7 +136,11 @@ class _Mood extends State<Mood> {
                 ),
               ),
             ),
-        FloatingActionButton(
+           ],
+         ),
+
+      ),
+        floatingActionButton: FloatingActionButton(
           onPressed: () {
             setState(() {
               for (int buttonIndex = 0;
@@ -149,13 +152,11 @@ class _Mood extends State<Mood> {
               }
               daily.add(controller.text);
               controller.clear();
+              Navigator.push(context, MaterialPageRoute(builder: (context) => HomeRoute()));
             });
           },
-        ),],
+          child: Icon(Icons.check),
         ),
-        //  child: Icon(Icons.check),
-        ),
-      ),
-    );
+    ));
   }
 }
