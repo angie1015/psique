@@ -226,6 +226,19 @@ class _HomeRouteState extends State<HomeRoute> {
             ),
           )
       ),
+      floatingActionButton: Opacity(
+        opacity: .5,
+        child: FloatingActionButton(
+          backgroundColor: Colors.blueGrey,
+          onPressed: () {
+            setState(() {
+
+              Navigator.push(context, MaterialPageRoute(builder: (context) => HomeRoute()));
+            });
+          },
+          child: Icon(Icons.chat),
+        ),
+      ),
     );
   }
 }

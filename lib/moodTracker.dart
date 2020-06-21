@@ -140,22 +140,26 @@ class _Mood extends State<Mood> {
          ),
 
       ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            setState(() {
-              for (int buttonIndex = 0;
-              buttonIndex < isSelected.length;
-              buttonIndex++) {
-                if (isSelected[buttonIndex] == true) {
-                  mood.add(buttonIndex);
+        floatingActionButton: Opacity(
+          opacity: .5,
+          child: FloatingActionButton(
+            backgroundColor: Colors.blueGrey,
+            onPressed: () {
+              setState(() {
+                for (int buttonIndex = 0;
+                buttonIndex < isSelected.length;
+                buttonIndex++) {
+                  if (isSelected[buttonIndex] == true) {
+                    mood.add(buttonIndex);
+                  }
                 }
-              }
-              daily.add(controller.text);
-              controller.clear();
-              Navigator.push(context, MaterialPageRoute(builder: (context) => HomeRoute()));
-            });
-          },
-          child: Icon(Icons.check),
+                daily.add(controller.text);
+                controller.clear();
+                Navigator.push(context, MaterialPageRoute(builder: (context) => HomeRoute()));
+              });
+            },
+            child: Icon(Icons.check),
+          ),
         ),
     ));
   }
