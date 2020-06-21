@@ -39,7 +39,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(fontFamily: 'Nunito'),
       title: 'Psique',
       debugShowCheckedModeBanner: false,
-      home: HomeRoute(), // use this line fo view the sign in page: StandardPage(auth),
+      home: StandardPage(auth), //HomeRoute(), // use this line fo view the sign in page: StandardPage(auth),
     );
   }
 }
