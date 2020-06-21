@@ -1,25 +1,45 @@
 import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth0/flutter_auth0.dart';
 import 'dart:async';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:psique/standard.dart';
 
 
 const img = 'assets/images/';
 const title = TextStyle(color: Colors.white, fontSize: 36, letterSpacing: 13.0, fontWeight: FontWeight.w600);
 
+
+final String clientId = 'Z5u77dqCC1fbVJgHPdrT2peRqTvWImcU';
+final String domain = 'akchy.us.auth0.com';
+
 void main() {
   runApp(new MyApp());
 }
 
-class MyApp extends StatelessWidget{
+class MyApp extends StatefulWidget{
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
+  Auth0 auth;
+
+  @override
+  void initState() {
+    super.initState();
+    auth = Auth0(baseUrl: 'https://$domain/', clientId: clientId);
+  }
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
       theme: ThemeData(fontFamily: 'Nunito'),
       title: 'Psique',
       debugShowCheckedModeBanner: false,
-      home: HomeRoute(),
+      home: HomeRoute(), // use this line fo view the sign in page: StandardPage(auth),
     );
   }
 }
