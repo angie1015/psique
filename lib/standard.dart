@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth0/flutter_auth0.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:psique/main.dart';
+import 'package:psique/moodTracker.dart';
 
 
 class StandardPage extends StatefulWidget {
@@ -37,7 +37,7 @@ class _StandardPageState extends State<StandardPage> {
         'password': pctrl.text,
         'connection': 'Username-Password-Authentication'
       });
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeRoute(),));
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Mood(),));
     } catch (e) {
       print(e);
     }
@@ -50,7 +50,7 @@ class _StandardPageState extends State<StandardPage> {
         'password': pctrl.text,
         'realm': 'Username-Password-Authentication'
       });
-
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Mood(),));
     } catch (e) {
       print(e);
     }

@@ -28,7 +28,13 @@ class _Mood extends State<Mood> {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.black26,
-        body: Column(
+        body: Container(
+        height: MediaQuery.of(context).size.height,
+    width: MediaQuery.of(context).size.width,
+    decoration: BoxDecoration(
+        image: DecorationImage(
+         image: AssetImage('assets/images/bkgnd_1.jpg'), fit: BoxFit.cover)),
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Center(
@@ -131,9 +137,7 @@ class _Mood extends State<Mood> {
                 ),
               ),
             ),
-          ],
-        ),
-        floatingActionButton: FloatingActionButton(
+        FloatingActionButton(
           onPressed: () {
             setState(() {
               for (int buttonIndex = 0;
@@ -147,7 +151,9 @@ class _Mood extends State<Mood> {
               controller.clear();
             });
           },
-          child: Icon(Icons.check),
+        ),],
+        ),
+        //  child: Icon(Icons.check),
         ),
       ),
     );
