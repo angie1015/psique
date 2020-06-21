@@ -33,7 +33,7 @@ class _StandardPageState extends State<StandardPage> {
 
   void _signUp() async {
     try {
-      var response = await auth.auth.createUser({
+      await auth.auth.createUser({
         'email': uctrl.text,
         'password': pctrl.text,
         'connection': 'Username-Password-Authentication'
@@ -46,7 +46,7 @@ class _StandardPageState extends State<StandardPage> {
 
   void _signIn() async {
     try {
-      var response = await auth.auth.passwordRealm({
+      await auth.auth.passwordRealm({
         'username': uctrl.text,
         'password': pctrl.text,
         'realm': 'Username-Password-Authentication'
