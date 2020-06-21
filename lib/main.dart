@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auth0/flutter_auth0.dart';
 import 'dart:async';
 import 'package:google_fonts/google_fonts.dart';
+import 'standard.dart';
 
 
 const img = 'assets/images/';
